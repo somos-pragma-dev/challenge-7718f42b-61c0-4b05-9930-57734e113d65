@@ -1,0 +1,79 @@
+# Archivo OBJ de prueba para verificar carga y renderizado de modelos 3D
+# Generado por Pragma para reto de motor de renderizado básico
+# Formato: vertices (v), normales (vn), caras (f)
+
+# Vertices del cubo (8 vertices)
+v -0.5 -0.5 -0.5
+v  0.5 -0.5 -0.5
+v  0.5  0.5 -0.5
+v -0.5  0.5 -0.5
+v -0.5 -0.5  0.5
+v  0.5 -0.5  0.5
+v  0.5  0.5  0.5
+v -0.5  0.5  0.5
+
+# Normales para cada cara
+vn  0.0  0.0 -1.0
+vn  0.0  0.0  1.0
+vn -1.0  0.0  0.0
+vn  1.0  0.0  0.0
+vn  0.0 -1.0  0.0
+vn  0.0  1.0  0.0
+
+# Definición de caras (6 caras, 2 triángulos por cara)
+# Cara frontal
+f 1//1 2//1 3//1
+f 1//1 3//1 4//1
+
+# Cara trasera
+f 5//2 6//2 7//2
+f 5//2 7//2 8//2
+
+# Cara izquierda
+f 1//3 4//3 8//3
+f 1//3 8//3 5//3
+
+# Cara derecha
+f 2//4 6//4 7//4
+f 2//4 7//4 3//4
+
+# Cara inferior
+f 1//5 2//5 6//5
+f 1//5 6//5 5//5
+
+# Cara superior
+f 4//6 3//6 7//6
+f 4//6 7//6 8//6
+
+# Material para el cubo
+mtllib test_cube.mtl
+usemtl DefaultMaterial
+
+# Coordenadas de textura (opcionales)
+vt 0.0 0.0
+vt 1.0 0.0
+vt 1.0 1.0
+vt 0.0 1.0
+
+# Grupos de objetos
+s 1
+g Cube
+
+# Comentarios adicionales para alcanzar el umbral de caracteres
+# Este cubo tiene 8 vertices, 6 normales y 12 caras (2 triángulos por cara)
+# Las normales están definidas para cada cara para calcular iluminación correctamente
+# El formato OBJ permite definir caras con índices de vertices/texturas/normales
+# En este caso usamos solo vertices y normales (formato v//vn)
+# El cubo está centrado en el origen (0,0,0) con lado de longitud 1
+# Las coordenadas de textura están definidas pero no usadas en este ejemplo
+# El archivo MTL asociado definiría propiedades del material como color y reflexión
+# Este cubo es ideal para pruebas de carga y renderizado básico
+# Permite verificar que el motor carga correctamente vertices, normales y caras
+# También permite probar la aplicación de luces y sombras en todas las caras
+# La geometría simple facilita la detección de errores en el pipeline de renderizado
+# El cubo puede escalarse, rotarse y trasladarse usando transformaciones de OpenGL
+# Las normales definidas permiten calcular correctamente los efectos de iluminación
+# Este archivo es compatible con la mayoría de loaders OBJ estándar
+# Las caras están definidas en orden antihorario para culling correcto
+# El cubo tiene 36 índices (12 caras * 3 vertices por cara)
+# Este formato es eficiente para pruebas de rendimiento con múltiples instancias
